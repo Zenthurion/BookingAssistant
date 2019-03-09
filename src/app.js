@@ -6,6 +6,7 @@ const express = require('express')
 const bodyParser = require('body-parser');
 const app = express()
 const port = 3000
+const fetch = require('node-fetch');
 
 const params = {
     date: 'date',
@@ -15,6 +16,15 @@ const params = {
     building: 'building',
     participants: 'participants'
 }
+
+fetch("https://mitsdu.sdu.dk/booking/api/booking/rooms?{}", {"credentials":"omit","headers":{"accept":"application/json, text/javascript, */*; q=0.01","content-type":"application/json; charset=utf-8","x-requested-with":"XMLHttpRequest"},"referrer":"https://mitsdu.sdu.dk/booking/Book.aspx","referrerPolicy":"no-referrer-when-downgrade","body":null,"method":"GET","mode":"cors"})
+    .then(res => res.text())
+    .then(body => {
+        rooms = JSON.parse(body);
+        console.log("Rooms fetched");
+    });
+
+var rooms = {};
 
 app.use(bodyParser.json());
 
