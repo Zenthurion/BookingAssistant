@@ -24,7 +24,13 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 app.post('/booking-info', (request, response) => {
     let data = UserData(request.body.result.parameters, params.date, params.from, params.to, params.seats, params.building, params.participants);
-    if(!data.isValid()) {
+    
+    response.send(JSON.stringify({
+        "speech": "Data received successfully",
+        "displayText" : "Data received successfully"
+    }));
+    
+    /*if(!data.isValid()) {
         response.send(JSON.stringify({
             "speech": "Invalid data received",
             "displayText" : "Invalid data received"
@@ -34,7 +40,7 @@ app.post('/booking-info', (request, response) => {
     response.send(JSON.stringify({
         "speech": "Data received successfully",
         "displayText" : "Data received successfully"
-    }));
+    }));*/
 
 
 });
