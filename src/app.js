@@ -33,7 +33,7 @@ app.get('/', (req, res) => res.send('Hello Test Without Delay!'))
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 app.post('/booking-info', (request, response) => {
-    let data = UserData(request.body.result.parameters, params.date, params.from, params.to, params.seats, params.building, params.participants);
+    //let data = UserData(request.body.result.parameters, params.date, params.from, params.to, params.seats, params.building, params.participants);
     
     response.send(JSON.stringify({
         "speech": "Data received successfully",
