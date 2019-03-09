@@ -18,7 +18,7 @@ const params = {
 
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => res.send('Hello Test!'))
+app.get('/', (req, res) => res.send('Hello Test Without Delay!'))
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
