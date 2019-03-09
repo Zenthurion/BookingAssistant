@@ -31,6 +31,11 @@ app.post('/booking-info', (request, response) => {
         }));
         return;
     }
+    response.send(JSON.stringify({
+        "speech": "Data received successfully",
+        "displayText" : "Data received successfully"
+    }));
+
 
 });
 
